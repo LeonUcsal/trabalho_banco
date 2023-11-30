@@ -1,0 +1,74 @@
+---------------------------------TESTE---------------------------------
+
+CRIAR UM TIPOSERVICO:
+URL: localhost:8080/tipoServicos
+BODY: 
+{
+    "tipo": "Atendimento médico"
+}
+
+CRIAR UM TIPOUSUARIO:
+URL: localhost:8080/tipoUsuario
+BODY: 
+ {
+  "tipo": "Oferecedor de servicos"
+ }
+
+{
+  "tipo": "Comum"
+ }
+
+
+CRIAR UM USUARIO:
+URL:localhost:8080/Usuario
+BODY:
+{
+    "nome": "Leon",
+    "tipoUsuario": {
+        "id": 1,
+        "tipo": "Oferecedor de servicos"
+    },
+    "contato": "71983485255"
+}
+
+CRIAR UM SERVICO:
+URL:localhost:8080/servicos
+{
+    "descricao": "Atendimento médico com Leon",
+    "usuario":{
+            "id": 1,
+            "nome": "Leon",
+            "tipoUsuario": {
+        "id": 1,
+        "tipo": "Oferecedor de servicos"
+    },
+    "contato": "71983485255"
+    },
+    "tipoServico": {
+        "id": 1,
+        "tipo": "Atendimento médico"
+    }
+}
+
+UPDATE EM UM SERVICO:
+{
+        "id": "1",
+        "descricao": "Atendimento médico na esquina de seu Pedro",
+        "usuario": {
+            "id": 1,
+            "nome": "Leon",
+            "tipoUsuario": {
+                "id": 1,
+                "tipo": "Oferecedor de servicos"
+            },
+            "contato": "71983485255"
+        },
+        "tipoServico": {
+            "id": 1,
+            "tipo": "Atendimento médico"
+        }
+    }
+
+
+DELETE EM UM SERVICO:
+URL: localhost:8080/servicos/1
